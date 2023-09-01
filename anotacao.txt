@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MaterialApp(
+    home: HomeStateFull(),
+  ));
+}
+
+class HomeStateFull extends StatefulWidget {
+  const HomeStateFull({super.key});
+
+  @override
+  State<HomeStateFull> createState() => _HomeStateFullState();
+}
+
+class _HomeStateFullState extends State<HomeStateFull> {
+  var _texto = "Fabio Lima";
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Instagran"),
+        backgroundColor: Colors.deepPurpleAccent,
+      ),
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () => {setState(() => _texto = "Curso de Flutter")},
+              child: const Text("Click Aqui"),
+            ),
+            Text("Nome: $_texto")
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
